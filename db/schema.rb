@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190603133124) do
+ActiveRecord::Schema.define(version: 20200418043417) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -1600,6 +1600,7 @@ ActiveRecord::Schema.define(version: 20190603133124) do
     t.string "pro_message"
     t.string "pro_discord_user"
     t.integer "email_status", default: 0
+    t.integer "permissions", default: 0, null: false
     t.index ["ao_id"], name: "index_users_on_ao_id", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["facebook_id"], name: "index_users_on_facebook_id", unique: true
