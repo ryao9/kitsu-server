@@ -130,4 +130,12 @@ module Types::Media
   def quotes
     AssociationLoader.for(object.class, :quotes).load(object).then(&:to_a)
   end
+
+  field :media_reactions, Types::MediaReaction.connection_type,
+    null: false,
+    description: 'A list of reactions for this media'
+
+  def media_reactions
+    AssociationLoader.for(object.class, :media_reactions).load(object)
+  end
 end
